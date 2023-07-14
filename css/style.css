@@ -45,10 +45,34 @@ main{
 	height: 50px;
 	border-radius: 50%;
 	background-color: var(--loading);
+	border: 1px solid var(--loading);
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
+}
+
+.loading::before{
+	content: "";
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: var(--background);
+	margin-left: 20px;
+	animation: black_phase 5s step-end infinite;
+}
+
+.loading::after{
+	content: "";
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: var(--loading);
+	margin-left: -20px;
+	animation: white_phase 5s step-end infinite;
 }
 
 h1{
@@ -66,5 +90,77 @@ p{
 
 p>a{
 	color: var(--link);	
+}
+
+@keyframes black_phase{
+	0%{
+		width: 52px;
+		height: 52px;
+		margin-left: 0px;
+	}
+	12%{
+		width: 40px;
+		height: 55px;
+		margin-left: 20px;
+	}
+	24%{
+		width: 52px;
+		height: 52px;
+		border-radius: 0;
+		margin-left: 50px;
+	}
+	36%{
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		margin-left: 0;
+	}
+	84%{
+		width: 40px;
+		height: 55px;
+		margin-left: -20px;
+	}
+	100%{
+		margin-left: 0px;
+		width: 52px;
+		height: 52px;
+	}
+}
+
+@keyframes white_phase{
+	0%{
+		width: 52px;
+		height: 52px;
+		margin-left: -120px;
+	}
+	36%{
+		width: 40px;
+		height: 55px;
+		margin-left: -20px;
+	}
+	48%{
+		width: 50px;
+		height: 50px;
+		margin-left: 0;
+	}
+	60%{
+		width: 40px;
+		height: 55px;
+		margin-left: 20px;
+	}
+	72%{
+		width: 50px;
+		height: 50px;
+		border-radius: 0;
+		margin-left: 50px;
+	}
+	84%{
+		margin-left: -120px;
+	}
+	100%{
+		width: 52px;
+		height: 52px;
+		margin-left: -120px;
+	}
 }
 
