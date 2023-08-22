@@ -263,7 +263,6 @@ section{
 	border: 1px solid var(--secondary);
 	box-shadow: 4px 4px 0 var(--shadow);
 	color: var(--secondary);
-	cursor: pointer;
 	font-weight: 600;
 }
 
